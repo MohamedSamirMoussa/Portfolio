@@ -32,13 +32,13 @@ const About = () => {
                 <FontAwesomeIcon icon={faLinkedin} className="w-4" />
               </Link>
 
-              <button
-                type="button"
+              <Link
+                href={"https://wa.me/2001141188639"}
                 className="inline-flex min-h-11 gap-2 w-full items-center justify-center rounded-2xl border-2 border-border bg-bg px-4 py-3 text-center text-sm font-medium text-white transition-colors duration-300 hover:bg-secondary hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary motion-reduce:transition-none sm:w-auto"
               >
                 Find me on WhatsApp
                 <FontAwesomeIcon icon={faWhatsapp} className="w-4" />
-              </button>
+              </Link>
             </div>
           </div>
 

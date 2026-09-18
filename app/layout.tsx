@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { lazy } from "react";
 import PortfolioAnimation from "./Components/PortfolioAnimation/PortfolioAnimation";
+import WhatsAppIcon from "./Components/WhatsAppIcon/WhatsAppIcon";
 
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-main">
         <PortfolioAnimation>
           <Navbar />
+          <WhatsAppIcon />
           {children}
         </PortfolioAnimation>
       </body>
