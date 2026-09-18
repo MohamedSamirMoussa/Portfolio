@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const INTRO_SECONDS = 3;
+const INTRO_SECONDS = 1;
 
 export default function PortfolioAnimation({
   children,
@@ -25,7 +25,6 @@ export default function PortfolioAnimation({
 
       if (!root || !page) return;
 
-      // احترام إعداد تقليل الحركة عند المستخدم.
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         return;
       }

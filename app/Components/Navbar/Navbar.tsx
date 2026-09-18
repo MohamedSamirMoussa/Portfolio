@@ -39,17 +39,7 @@ export default function Navbar() {
           onClick={() => setIsOpen(false)}
           className="flex min-w-0 items-center gap-2"
         >
-          <Image
-            src={me}
-            alt="Mohamed Samir Moussa"
-            width={36}
-            height={36}
-            className="h-9 w-9 shrink-0 rounded-full object-cover"
-          />
-
-          
-            <Image src={icon} alt="logo" className="w-10"/>
-          
+          <Image src={icon} alt="logo" className="w-10" />
         </Link>
 
         <div className="flex items-center gap-2 md:order-2">

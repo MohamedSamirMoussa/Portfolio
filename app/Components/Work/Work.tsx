@@ -5,6 +5,8 @@ import socialImage from "../../../public/socail_app.png";
 import anoing from "../../../public/anoing.png";
 import odoo from "../../../public/odoo.png";
 import freshCart from "../../../public/fresh-cart.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faReact } from "@fortawesome/free-brands-svg-icons";
 
 const projects = [
   {
@@ -39,14 +41,17 @@ const projects = [
       {
         label: "Explore Back-end",
         href: "https://github.com/MohamedSamirMoussa/Social-Media-BE",
+        icon: faGithub,
       },
       {
         label: "Explore Front-end",
         href: "https://github.com/MohamedSamirMoussa/Social-Media-FE",
+        icon: faGithub,
       },
       {
         label: "Explore Website",
         href: "https://socialapp-peach-sigma.vercel.app",
+        icon: faReact,
       },
     ],
   },
@@ -77,6 +82,7 @@ const projects = [
       {
         label: "Explore Anoing",
         href: "https://www.anoing.com",
+        icon: faReact,
       },
     ],
   },
@@ -101,6 +107,7 @@ const projects = [
       {
         label: "Explore Project",
         href: "https://github.com/MohamedSamirMoussa/Odoo-Project",
+        icon: faGithub,
       },
     ],
   },
@@ -127,10 +134,12 @@ const projects = [
       {
         label: "Explore Front-end",
         href: "https://github.com/MohamedSamirMoussa/fresh-cart",
+        icon: faGithub,
       },
       {
         label: "Explore Fresh Cart",
         href: "https://fresh-cart-steel-pi.vercel.app",
+        icon: faReact,
       },
     ],
   },
@@ -212,9 +221,9 @@ const Work = () => {
                   </p>
 
                   <div className="skills flex flex-wrap gap-2">
-                    {project.skills.map((skill) => (
+                    {project.skills.map((skill, idx) => (
                       <span
-                        key={skill}
+                        key={idx}
                         className={`rounded-full border border-border bg-bg px-3 py-1 text-xs text-[#a5b7c5] sm:text-sm`}
                       >
                         {skill}
@@ -232,6 +241,10 @@ const Work = () => {
                         className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border-2 border-border bg-bg px-4 py-3 text-center text-sm font-semibold text-white transition-colors duration-200 hover:border-secondary hover:bg-secondary hover:text-contact focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary motion-reduce:transition-none sm:w-auto"
                       >
                         {link.label}
+                        <FontAwesomeIcon
+                          icon={link.icon}
+                          className="w-5 ms-2"
+                        />
                       </Link>
                     ))}
                   </div>

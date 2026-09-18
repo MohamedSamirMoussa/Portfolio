@@ -6,6 +6,15 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --color-main: #081119;
+  --color-secondary: #6ae3d4;
+  --color-border: #293d4c;
+  --color-card: #0f1d28;
+  --color-contact: #102e35;
+  --color-bg: #0f1d28;
+}
+
 @theme {
   --color-main: #081119;
   --color-secondary: #6ae3d4;
