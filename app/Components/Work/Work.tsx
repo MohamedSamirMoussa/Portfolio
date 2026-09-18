@@ -4,6 +4,7 @@ import Link from "next/link";
 import socialImage from "../../../public/socail_app.png";
 import anoing from "../../../public/anoing.png";
 import odoo from "../../../public/odoo.png";
+import freshCart from "../../../public/fresh-cart.png";
 
 const projects = [
   {
@@ -15,7 +16,25 @@ const projects = [
     imageAlt: "Social Media Platform interface",
     website: "https://socialapp-peach-sigma.vercel.app",
     featured: true,
-    skills: ["React", "Node.js", "Socket.IO", "MongoDB"],
+    skills: [
+      "React",
+      "Node.js",
+      "Vite",
+      "Typescript",
+      "Socket.IO",
+      "Mongoose",
+      "bcryptjs",
+      "cloudinary",
+      "cors",
+      "express-rate-limit",
+      "helmet",
+      "multer",
+      "zod",
+      "helmet",
+      "Mui",
+      "Redux-toolkit",
+      "Formik & Yup",
+    ],
     links: [
       {
         label: "Explore Back-end",
@@ -40,7 +59,20 @@ const projects = [
     imageAlt: "Anoing gaming community website",
     website: "https://www.anoing.com",
     featured: false,
-    skills: ["Next.js", "Node.js", "Socket.IO", "MongoDB", "RCON"],
+    skills: [
+      "Next.js 16",
+      "Node.js",
+      "Socket.IO",
+      "Mongoose",
+      "RCON",
+      "Redux Toolkit",
+      "TypeScript",
+      "Zod",
+      "Cloudinary & Multer",
+      "Nodemailer",
+      "Paypal",
+      "Helmet and Express Rate Limit",
+    ],
     links: [
       {
         label: "Explore Anoing",
@@ -57,11 +89,48 @@ const projects = [
     imageAlt: "Odoo real estate ERP interface",
     website: "https://github.com/MohamedSamirMoussa/Odoo-Project",
     featured: false,
-    skills: ["Odoo 18", "Python", "PostgreSQL", "Cron Jobs"],
+    skills: [
+      "Odoo 18",
+      "Python",
+      "PostgreSQL",
+      "Cron Jobs",
+      "XML views and reports",
+      "Odoo ORM, CRM, Product, and Mail modules",
+    ],
     links: [
       {
         label: "Explore Project",
         href: "https://github.com/MohamedSamirMoussa/Odoo-Project",
+      },
+    ],
+  },
+  {
+    title: "Fresh Cart",
+    category: "FRONTEND E-COMMERCE",
+    description: "Product discovery, wishlist, checkout and order history.",
+    image: freshCart,
+    imageAlt: "Odoo real estate ERP interface",
+    website: "https://github.com/MohamedSamirMoussa/fresh-cart",
+    featured: true,
+    skills: [
+      "React",
+      "React Router",
+      "Vite",
+      "Typescript",
+      "React Context",
+      "tailwindcss",
+      "formik",
+      "yup",
+      "React Query",
+    ],
+    links: [
+      {
+        label: "Explore Front-end",
+        href: "https://github.com/MohamedSamirMoussa/fresh-cart",
+      },
+      {
+        label: "Explore Fresh Cart",
+        href: "https://fresh-cart-steel-pi.vercel.app",
       },
     ],
   },
@@ -146,7 +215,7 @@ const Work = () => {
                     {project.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full border border-border bg-bg px-3 py-1 text-xs text-[#a5b7c5] sm:text-sm"
+                        className={`rounded-full border border-border bg-bg px-3 py-1 text-xs text-[#a5b7c5] sm:text-sm`}
                       >
                         {skill}
                       </span>

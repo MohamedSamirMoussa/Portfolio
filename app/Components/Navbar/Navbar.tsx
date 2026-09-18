@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import me from "../../../public/me.jpeg";
+import icon from "../../icon.png";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -46,9 +47,9 @@ export default function Navbar() {
             className="h-9 w-9 shrink-0 rounded-full object-cover"
           />
 
-          <span className="text-sm font-semibold hover:text-gray-300 text-gray-400 sm:text-base">
-            Mohamed Samir Moussa
-          </span>
+          
+            <Image src={icon} alt="logo" className="w-10"/>
+          
         </Link>
 
         <div className="flex items-center gap-2 md:order-2">

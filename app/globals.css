@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
+
+* {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --color-main: #081119;
   --color-secondary: #6ae3d4;
