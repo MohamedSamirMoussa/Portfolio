@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const WhatsAppIcon = () => {
   return (
-    <div className="fixed bottom-5 right-5 bg-green-500 w-13 h-13 flex justify-center items-center rounded-full animate-bounce">
+    <div className="fixed z-100 bottom-5 right-5 bg-green-500 w-13 h-13 flex justify-center items-center rounded-full animate-bounce">
       <Link
         href="https://wa.me/201141188639"
         target="_blank"

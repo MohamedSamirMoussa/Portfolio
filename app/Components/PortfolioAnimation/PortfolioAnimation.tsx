@@ -131,7 +131,7 @@ export default function PortfolioAnimation({
     <div ref={container}>
       <div
         aria-hidden="true"
-        className="intro invisible fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#081119] text-white"
+        className="intro invisible fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#081119] text-white"
       >
         <div className="flex items-center text-8xl font-bold sm:text-9xl">
           <span className="intro-letter">H</span>
