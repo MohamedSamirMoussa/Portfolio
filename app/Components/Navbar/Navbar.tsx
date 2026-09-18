@@ -48,7 +48,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="hidden rounded-lg bg-bg outline-1 outline-border px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-bg hover:outline-0 sm:inline-flex"
           >
-            Get started
+            Get In Touch
           </Link>
 
           <button
