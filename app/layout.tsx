@@ -5,6 +5,7 @@ import { lazy } from "react";
 import PortfolioAnimation from "./Components/PortfolioAnimation/PortfolioAnimation";
 import WhatsAppIcon from "./Components/WhatsAppIcon/WhatsAppIcon";
 import Footer from "./Components/Footer/Footer";
+import LanguageProvider from "./context/LanguageProvider";
 
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 
@@ -20,7 +21,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mohammed Samir Portfolio",
-  description: "This is my portfolio, my goal is to get clients and reach for more freelance experience",
+  description:
+    "This is my portfolio, my goal is to get clients and reach for more freelance experience",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -30,12 +32,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-main">
-        <PortfolioAnimation>
-          <Navbar />
-          <WhatsAppIcon />
-          {children}
-          <Footer />
-        </PortfolioAnimation>
+        <LanguageProvider>
+          <PortfolioAnimation>
+            <Navbar />
+            <WhatsAppIcon />
+            {children}
+            <Footer />
+          </PortfolioAnimation>
+        </LanguageProvider>
       </body>
     </html>
   );

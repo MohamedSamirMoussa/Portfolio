@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
+
 type ContactProps = {
   email: string;
   whatsappNumber: string;
@@ -5,22 +9,27 @@ type ContactProps = {
 };
 
 const Contact = ({ email, whatsappNumber, linkedinUrl }: ContactProps) => {
+  const { t } = useTranslation();
+
   const contactLinks = [
     {
-      title: "Email",
+      id: "email",
+      title: t("contact.links.email.title"),
       description: email,
       href: `mailto:${email}`,
       external: false,
     },
     {
-      title: "WhatsApp",
-      description: "Start a conversation",
+      id: "whatsapp",
+      title: t("contact.links.whatsapp.title"),
+      description: t("contact.links.whatsapp.description"),
       href: `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`,
       external: true,
     },
     {
-      title: "LinkedIn",
-      description: "Let’s connect professionally",
+      id: "linkedin",
+      title: t("contact.links.linkedin.title"),
+      description: t("contact.links.linkedin.description"),
       href: linkedinUrl,
       external: true,
     },
@@ -35,34 +44,34 @@ const Contact = ({ email, whatsappNumber, linkedinUrl }: ContactProps) => {
       <div className="rounded-3xl border-2 border-border bg-card p-5 sm:p-8 lg:p-12">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="flex min-w-0 flex-col gap-5">
-            <span className="text-xs font-bold tracking-widest text-secondary">
-              03 / GET IN TOUCH
+            <span className="text-xs font-bold tracking-widest text-secondary rtl:tracking-normal">
+              {t("contact.eyebrow")}
             </span>
 
             <h2
               id="contact-heading"
               className="text-3xl font-bold leading-tight text-white sm:text-4xl xl:text-5xl"
             >
-              Have a project in mind?
+              {t("contact.title")}
+
               <span className="mt-2 block text-secondary">
-                Let’s build it together.
+                {t("contact.highlight")}
               </span>
             </h2>
 
             <p className="max-w-lg text-base leading-7 text-[#a5b7c5] sm:text-lg sm:leading-8">
-              Whether you need a website, a full-stack application or a custom
-              Odoo workflow, I’d love to hear what you’re working on.
+              {t("contact.description")}
             </p>
 
             <p className="text-sm leading-6 text-[#a5b7c5]">
-              Tell me about your idea, your goals and what you need help with.
+              {t("contact.invitation")}
             </p>
           </div>
 
           <div className="flex min-w-0 flex-col gap-3 sm:gap-4">
             {contactLinks.map((link) => (
               <a
-                key={link.title}
+                key={link.id}
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
@@ -74,7 +83,9 @@ const Contact = ({ email, whatsappNumber, linkedinUrl }: ContactProps) => {
                   </h3>
 
                   <p className="mt-1 break-words text-sm leading-6 text-[#a5b7c5]">
-                    {link.description}
+                    <bdi dir={link.id === "email" ? "ltr" : "auto"}>
+                      {link.description}
+                    </bdi>
                   </p>
                 </div>
 
@@ -85,6 +96,7 @@ const Contact = ({ email, whatsappNumber, linkedinUrl }: ContactProps) => {
                     viewBox="0 0 24 24"
                     fill="none"
                     aria-hidden="true"
+                    className="rtl:-scale-x-100"
                   >
                     <path
                       d="M7 17 17 7M7 7h10v10"

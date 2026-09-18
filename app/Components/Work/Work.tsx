@@ -1,151 +1,157 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faReact } from "@fortawesome/free-brands-svg-icons";
 
 import socialImage from "../../../public/socail_app.png";
 import anoing from "../../../public/anoing.png";
 import odoo from "../../../public/odoo.png";
 import freshCart from "../../../public/fresh-cart.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faReact } from "@fortawesome/free-brands-svg-icons";
-
-const projects = [
-  {
-    title: "Social Media Platform",
-    category: "FEATURED / FULL-STACK APPLICATION",
-    description:
-      "Posts, friendships and conversations in one connected experience.",
-    image: socialImage,
-    imageAlt: "Social Media Platform interface",
-    website: "https://socialapp-peach-sigma.vercel.app",
-    featured: true,
-    skills: [
-      "React",
-      "Node.js",
-      "Vite",
-      "Typescript",
-      "Socket.IO",
-      "Mongoose",
-      "bcryptjs",
-      "cloudinary",
-      "cors",
-      "express-rate-limit",
-      "helmet",
-      "multer",
-      "zod",
-      "helmet",
-      "Mui",
-      "Redux-toolkit",
-      "Formik & Yup",
-    ],
-    links: [
-      {
-        label: "Explore Back-end",
-        href: "https://github.com/MohamedSamirMoussa/Social-Media-BE",
-        icon: faGithub,
-      },
-      {
-        label: "Explore Front-end",
-        href: "https://github.com/MohamedSamirMoussa/Social-Media-FE",
-        icon: faGithub,
-      },
-      {
-        label: "Explore Website",
-        href: "https://socialapp-peach-sigma.vercel.app",
-        icon: faReact,
-      },
-    ],
-  },
-  {
-    title: "Anoing",
-    category: "FREELANCE / GAMING COMMUNITY",
-    description:
-      "A community platform with live server data, leaderboards, donations and an admin dashboard.",
-    image: anoing,
-    imageAlt: "Anoing gaming community website",
-    website: "https://www.anoing.com",
-    featured: false,
-    skills: [
-      "Next.js 16",
-      "Node.js",
-      "Socket.IO",
-      "Mongoose",
-      "RCON",
-      "Redux Toolkit",
-      "TypeScript",
-      "Zod",
-      "Cloudinary & Multer",
-      "Nodemailer",
-      "Paypal",
-      "Helmet and Express Rate Limit",
-    ],
-    links: [
-      {
-        label: "Explore Anoing",
-        href: "https://www.anoing.com",
-        icon: faReact,
-      },
-    ],
-  },
-  {
-    title: "Real Estate ERP",
-    category: "BUSINESS APPLICATION / ODOO",
-    description:
-      "A connected sales workflow from unit inventory to reservations, contracts and installments.",
-    image: odoo,
-    imageAlt: "Odoo real estate ERP interface",
-    website: "https://github.com/MohamedSamirMoussa/Odoo-Project",
-    featured: false,
-    skills: [
-      "Odoo 18",
-      "Python",
-      "PostgreSQL",
-      "Cron Jobs",
-      "XML views and reports",
-      "Odoo ORM, CRM, Product, and Mail modules",
-    ],
-    links: [
-      {
-        label: "Explore Project",
-        href: "https://github.com/MohamedSamirMoussa/Odoo-Project",
-        icon: faGithub,
-      },
-    ],
-  },
-  {
-    title: "Fresh Cart",
-    category: "FRONTEND E-COMMERCE",
-    description: "Product discovery, wishlist, checkout and order history.",
-    image: freshCart,
-    imageAlt: "Odoo real estate ERP interface",
-    website: "https://github.com/MohamedSamirMoussa/fresh-cart",
-    featured: true,
-    skills: [
-      "React",
-      "React Router",
-      "Vite",
-      "Typescript",
-      "React Context",
-      "tailwindcss",
-      "formik",
-      "yup",
-      "React Query",
-    ],
-    links: [
-      {
-        label: "Explore Front-end",
-        href: "https://github.com/MohamedSamirMoussa/fresh-cart",
-        icon: faGithub,
-      },
-      {
-        label: "Explore Fresh Cart",
-        href: "https://fresh-cart-steel-pi.vercel.app",
-        icon: faReact,
-      },
-    ],
-  },
-];
 
 const Work = () => {
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      id: "social",
+      title: t("work.projects.social.title"),
+      category: t("work.projects.social.category"),
+      description: t("work.projects.social.description"),
+      image: socialImage,
+      imageAlt: t("work.projects.social.imageAlt"),
+      website: "https://socialapp-peach-sigma.vercel.app",
+      featured: true,
+      skills: [
+        "React",
+        "Node.js",
+        "Vite",
+        "TypeScript",
+        "Socket.IO",
+        "Mongoose",
+        "bcryptjs",
+        "Cloudinary",
+        "cors",
+        "express-rate-limit",
+        "Helmet",
+        "Multer",
+        "Zod",
+        "MUI",
+        "Redux Toolkit",
+        "Formik & Yup",
+      ],
+      links: [
+        {
+          label: t("work.buttons.backend"),
+          href: "https://github.com/MohamedSamirMoussa/Social-Media-BE",
+          icon: faGithub,
+        },
+        {
+          label: t("work.buttons.frontend"),
+          href: "https://github.com/MohamedSamirMoussa/Social-Media-FE",
+          icon: faGithub,
+        },
+        {
+          label: t("work.buttons.website"),
+          href: "https://socialapp-peach-sigma.vercel.app",
+          icon: faReact,
+        },
+      ],
+    },
+    {
+      id: "anoing",
+      title: t("work.projects.anoing.title"),
+      category: t("work.projects.anoing.category"),
+      description: t("work.projects.anoing.description"),
+      image: anoing,
+      imageAlt: t("work.projects.anoing.imageAlt"),
+      website: "https://www.anoing.com",
+      featured: false,
+      skills: [
+        "Next.js 16",
+        "Node.js",
+        "Socket.IO",
+        "Mongoose",
+        "RCON",
+        "Redux Toolkit",
+        "TypeScript",
+        "Zod",
+        "Cloudinary & Multer",
+        "Nodemailer",
+        "PayPal",
+        "Helmet & Express Rate Limit",
+      ],
+      links: [
+        {
+          label: t("work.buttons.anoing"),
+          href: "https://www.anoing.com",
+          icon: faReact,
+        },
+      ],
+    },
+    {
+      id: "odoo",
+      title: t("work.projects.odoo.title"),
+      category: t("work.projects.odoo.category"),
+      description: t("work.projects.odoo.description"),
+      image: odoo,
+      imageAlt: t("work.projects.odoo.imageAlt"),
+      website: "https://github.com/MohamedSamirMoussa/Odoo-Project",
+      featured: false,
+      skills: [
+        "Odoo 18",
+        "Python",
+        "PostgreSQL",
+        t("work.skills.cron"),
+        t("work.skills.xml"),
+        t("work.skills.odooModules"),
+      ],
+      links: [
+        {
+          label: t("work.buttons.project"),
+          href: "https://github.com/MohamedSamirMoussa/Odoo-Project",
+          icon: faGithub,
+        },
+      ],
+    },
+    {
+      id: "freshCart",
+      title: t("work.projects.freshCart.title"),
+      category: t("work.projects.freshCart.category"),
+      description: t("work.projects.freshCart.description"),
+      image: freshCart,
+      imageAlt: t("work.projects.freshCart.imageAlt"),
+      website: "https://github.com/MohamedSamirMoussa/fresh-cart",
+      featured: true,
+      skills: [
+        "React",
+        "React Router",
+        "Vite",
+        "TypeScript",
+        "React Context",
+        "Tailwind CSS",
+        "Formik",
+        "Yup",
+        "React Query",
+      ],
+      links: [
+        {
+          label: t("work.buttons.frontend"),
+          href: "https://github.com/MohamedSamirMoussa/fresh-cart",
+          icon: faGithub,
+        },
+        {
+          label: t("work.buttons.freshCart"),
+          href: "https://fresh-cart-steel-pi.vercel.app",
+          icon: faReact,
+        },
+      ],
+    },
+  ];
+
   return (
     <section
       id="work"
@@ -155,20 +161,20 @@ const Work = () => {
       <div className="inner w-full min-w-0">
         <div className="header mb-6 flex flex-col gap-4 sm:mb-8 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
           <div className="min-w-0">
-            <span className="text-xs font-semibold tracking-wider text-secondary sm:text-sm">
-              01 / SELECTED WORK
+            <span className="text-xs font-semibold tracking-wider text-secondary sm:text-sm rtl:tracking-normal">
+              {t("work.eyebrow")}
             </span>
 
             <h2
               id="work-heading"
               className="mt-3 text-3xl font-semibold leading-tight text-white sm:text-4xl xl:text-5xl"
             >
-              A few things I’ve built.
+              {t("work.title")}
             </h2>
           </div>
 
           <p className="max-w-md text-sm font-medium leading-7 text-[#a5b7c5] sm:text-base lg:max-w-xs">
-            Across communities, commerce and business workflows.
+            {t("work.description")}
           </p>
         </div>
 
@@ -179,7 +185,9 @@ const Work = () => {
                 href={project.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Explore ${project.title}`}
+                aria-label={t("work.exploreProject", {
+                  title: project.title,
+                })}
                 className="right relative block aspect-[16/10] w-full min-w-0 shrink-0 overflow-hidden rounded-2xl border-2 border-border focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary"
               >
                 <Image
@@ -194,7 +202,7 @@ const Work = () => {
 
             return (
               <article
-                key={project.title}
+                key={project.id}
                 className={`card min-w-0 rounded-3xl border-2 border-border bg-card p-4 sm:p-6 xl:p-8 ${
                   project.featured
                     ? "col-span-full grid grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:gap-8"
@@ -204,7 +212,7 @@ const Work = () => {
                 {!project.featured && preview}
 
                 <div className="left flex min-w-0 flex-1 flex-col gap-4 sm:gap-5">
-                  <span className="text-xs font-bold leading-5 tracking-wide text-secondary">
+                  <span className="text-xs font-bold leading-5 tracking-wide text-secondary rtl:tracking-normal">
                     {project.category}
                   </span>
 
@@ -213,7 +221,7 @@ const Work = () => {
                       project.featured ? "xl:text-5xl" : "xl:text-4xl"
                     }`}
                   >
-                    {project.title}
+                    <bdi>{project.title}</bdi>
                   </h3>
 
                   <p className="text-sm font-medium leading-7 text-[#a5b7c5] sm:text-base">
@@ -221,12 +229,12 @@ const Work = () => {
                   </p>
 
                   <div className="skills flex flex-wrap gap-2">
-                    {project.skills.map((skill, idx) => (
+                    {project.skills.map((skill, index) => (
                       <span
-                        key={idx}
-                        className={`rounded-full border border-border bg-bg px-3 py-1 text-xs text-[#a5b7c5] sm:text-sm`}
+                        key={`${project.id}-skill-${index}`}
+                        className="rounded-full border border-border bg-bg px-3 py-1 text-xs text-[#a5b7c5] sm:text-sm"
                       >
-                        {skill}
+                        <bdi>{skill}</bdi>
                       </span>
                     ))}
                   </div>
@@ -238,12 +246,14 @@ const Work = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border-2 border-border bg-bg px-4 py-3 text-center text-sm font-semibold text-white transition-colors duration-200 hover:border-secondary hover:bg-secondary hover:text-contact focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary motion-reduce:transition-none sm:w-auto"
+                        className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border-2 border-border bg-bg px-4 py-3 text-center text-sm font-semibold text-white transition-colors duration-200 hover:border-secondary hover:bg-secondary hover:text-contact focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary motion-reduce:transition-none sm:w-auto"
                       >
                         {link.label}
+
                         <FontAwesomeIcon
                           icon={link.icon}
-                          className="w-5 ms-2"
+                          aria-hidden="true"
+                          className="w-5 shrink-0"
                         />
                       </Link>
                     ))}

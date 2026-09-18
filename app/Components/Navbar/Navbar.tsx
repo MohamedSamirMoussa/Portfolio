@@ -1,37 +1,54 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Link from "next/link";
-import me from "../../../public/me.jpeg";
+
 import icon from "../../icon.png";
 
 const links = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
+  { labelKey: "navbar.work", href: "#work" },
+  { labelKey: "navbar.about", href: "#about" },
+  { labelKey: "navbar.contact", href: "#contact" },
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
+
+  const { t, i18n } = useTranslation();
+
+  const language = i18n.resolvedLanguage === "ar" ? "ar" : "en";
+  const nextLanguage = language === "en" ? "ar" : "en";
 
   useEffect(() => {
     const handleScroll = () => {
       setScroll(window.scrollY > 20);
     };
+
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const toggleLanguage = () => {
+    void i18n.changeLanguage(nextLanguage);
+    setIsOpen(false);
+  };
+
   return (
     <nav
-      aria-label="Main navigation"
-      className={`fixed inset-x-0 top-0 z-50 border-b border-border bg-bg ${scroll ? "py-2" : "py-0"} transition-all duration-300 ease-in-out`}
+      aria-label={t("navbar.mainNavigation")}
+      className={`fixed inset-x-0 top-0 z-50 border-b border-border bg-bg transition-[padding] duration-300 ease-in-out motion-reduce:transition-none ${
+        scroll ? "py-2" : "py-0"
+      }`}
     >
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-x-4 px-4 py-3">
         <Link
@@ -39,25 +56,39 @@ export default function Navbar() {
           onClick={() => setIsOpen(false)}
           className="flex min-w-0 items-center gap-2"
         >
-          <Image src={icon} alt="logo" className="w-10" />
+          <Image src={icon} alt={t("navbar.logo")} className="h-auto w-10" />
         </Link>
 
         <div className="flex items-center gap-2 md:order-2">
           <Link
             href="#contact"
             onClick={() => setIsOpen(false)}
-            className="hidden rounded-lg bg-bg outline-1 outline-border px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-bg hover:outline-0 sm:inline-flex"
+            className="hidden rounded-lg bg-bg px-4 py-2 text-sm font-medium text-white outline-1 outline-border hover:bg-secondary hover:text-bg hover:outline-0 sm:inline-flex"
           >
-            Get In Touch
+            {t("navbar.getInTouch")}
           </Link>
+
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            aria-label={t("navbar.switchLanguage")}
+            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-3 py-2 text-sm font-semibold text-secondary transition-colors hover:bg-secondary hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary"
+          >
+            <span
+              lang={nextLanguage}
+              dir={nextLanguage === "ar" ? "rtl" : "ltr"}
+            >
+              {nextLanguage === "ar" ? "العربية" : "English"}
+            </span>
+          </button>
 
           <button
             type="button"
             onClick={() => setIsOpen((previous) => !previous)}
             aria-controls="navbar-menu"
             aria-expanded={isOpen}
-            aria-label={isOpen ? "Close main menu" : "Open main menu"}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-blue-600 md:hidden"
+            aria-label={isOpen ? t("navbar.closeMenu") : t("navbar.openMenu")}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-300 hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-secondary md:hidden"
           >
             <svg
               width="24"
@@ -91,9 +122,9 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-gray-300 md:px-0 md:hover:bg-transparent transition-all duration-300 ease-in-out"
+                    className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-400 transition-colors duration-300 hover:bg-gray-800 hover:text-gray-300 md:px-0 md:hover:bg-transparent"
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </a>
                 </li>
               ))}

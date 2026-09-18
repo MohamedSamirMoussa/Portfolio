@@ -1,0 +1,123 @@
+{
+  "navbar": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "getInTouch": "Get in touch",
+    "mainNavigation": "Main navigation",
+    "logo": "Mohamed Samir Moussa — Home",
+    "openMenu": "Open main menu",
+    "closeMenu": "Close main menu",
+    "switchLanguage": "Switch to Arabic"
+  },
+  "hero": {
+    "eyebrow": "FULL-STACK DEVELOPER / CAIRO, EGYPT",
+    "titleFirst": "Thoughtful interfaces.",
+    "titleSecond": "Powerful systems.",
+    "description": "I am Mohamed Samir Moussa. I build web applications from the first interaction to the API behind it.",
+    "exploreWork": "Explore my work",
+    "github": "GitHub",
+    "imageAlt": "Mohamed Samir Moussa"
+  },
+  "work": {
+    "eyebrow": "01 / SELECTED WORK",
+    "title": "A few things I’ve built.",
+    "description": "Across communities, commerce and business workflows.",
+    "exploreProject": "Explore {{title}}",
+    "buttons": {
+      "backend": "Explore Back-end",
+      "frontend": "Explore Front-end",
+      "website": "Explore Website",
+      "anoing": "Explore Anoing",
+      "project": "Explore Project",
+      "freshCart": "Explore Fresh Cart"
+    },
+    "skills": {
+      "cron": "Cron Jobs",
+      "xml": "XML views and reports",
+      "odooModules": "Odoo ORM, CRM, Product, and Mail modules"
+    },
+    "projects": {
+      "social": {
+        "title": "Social Media Platform",
+        "category": "FEATURED / FULL-STACK APPLICATION",
+        "description": "Posts, friendships and conversations in one connected experience.",
+        "imageAlt": "Social Media Platform interface"
+      },
+      "anoing": {
+        "title": "Anoing",
+        "category": "FREELANCE / GAMING COMMUNITY",
+        "description": "A community platform with live server data, leaderboards, donations and an admin dashboard.",
+        "imageAlt": "Anoing gaming community website"
+      },
+      "odoo": {
+        "title": "Real Estate ERP",
+        "category": "BUSINESS APPLICATION / ODOO",
+        "description": "A connected sales workflow from unit inventory to reservations, contracts and installments.",
+        "imageAlt": "Odoo real estate ERP interface"
+      },
+      "freshCart": {
+        "title": "Fresh Cart",
+        "category": "FRONTEND E-COMMERCE",
+        "description": "Product discovery, wishlist, checkout and order history.",
+        "imageAlt": "Fresh Cart e-commerce website interface"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "02 / A LITTLE ABOUT ME",
+    "title": "Curious by nature. Hands-on by choice.",
+    "description": "I enjoy connecting the details: a clear interface, a well-structured API and the workflow in between. My projects span web products, real-time features and custom Odoo business modules.",
+    "linkedin": "Find me on LinkedIn",
+    "whatsapp": "Find me on WhatsApp",
+    "howIWork": {
+      "title": "HOW I WORK",
+      "understand": "Understand the flow",
+      "build": "Build the core",
+      "refine": "Refine the details"
+    },
+    "toolkit": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "dataErp": "Data & ERP",
+      "tools": "Daily tools"
+    },
+    "experience": {
+      "intern": {
+        "title": "Odoo Developer Intern",
+        "description": "ZAD Solutions · 2-month internship"
+      },
+      "freelance": {
+        "title": "Anoing Full-stack Freelance Project"
+      },
+      "training": {
+        "title": "Full-Stack Development Track",
+        "description": "Route Academy · 2024–2026"
+      },
+      "education": {
+        "title": "Educational Media",
+        "description": "Ain Shams University · Bachelor’s studies"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "03 / GET IN TOUCH",
+    "title": "Have a project in mind?",
+    "highlight": "Let’s build it together.",
+    "description": "Whether you need a website, a full-stack application or a custom Odoo workflow, I’d love to hear what you’re working on.",
+    "invitation": "Tell me about your idea, your goals and what you need help with.",
+    "links": {
+      "email": {
+        "title": "Email"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Start a conversation"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Let’s connect professionally"
+      }
+    }
+  }
+}
