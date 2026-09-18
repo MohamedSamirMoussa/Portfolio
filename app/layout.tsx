@@ -4,6 +4,7 @@ import "./globals.css";
 import { lazy } from "react";
 import PortfolioAnimation from "./Components/PortfolioAnimation/PortfolioAnimation";
 import WhatsAppIcon from "./Components/WhatsAppIcon/WhatsAppIcon";
+import Footer from "./Components/Footer/Footer";
 
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar />
           <WhatsAppIcon />
           {children}
+          <Footer />
         </PortfolioAnimation>
       </body>
     </html>

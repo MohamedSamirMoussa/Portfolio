@@ -1,4 +1,5 @@
 import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
 import Hero from "./Components/Hero/Hero";
 import Work from "./Components/Work/Work";
 
@@ -14,6 +15,13 @@ export default function Home() {
       </div>
       <div data-reveal className="py-24">
         <About />
+      </div>
+      <div data-reveal className="py-24">
+        <Contact
+          email="mosamir5000@gmail.com"
+          whatsappNumber="201141188639"
+          linkedinUrl="https://www.linkedin.com/in/mohammad-samir-dev/"
+        />
       </div>
     </main>
   );
