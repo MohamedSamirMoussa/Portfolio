@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { lazy } from "react";
+import PortfolioAnimation from "./Components/PortfolioAnimation/PortfolioAnimation";
+
+const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +27,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full bg-main">
+        <PortfolioAnimation>
+          <Navbar />
+          {children}
+        </PortfolioAnimation>
+      </body>
     </html>
   );
 }
