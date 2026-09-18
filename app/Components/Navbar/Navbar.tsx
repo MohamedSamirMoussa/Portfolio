@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import me from "../../../public/me.jpeg";
@@ -13,11 +13,24 @@ const links = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY > 20);
+    };
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed inset-x-0 top-0 z-50 border-b border-border"
+      className={`fixed inset-x-0 top-0 z-50 border-b border-border bg-bg ${scroll ? "py-2" : "py-0"} transition-all duration-300 ease-in-out`}
     >
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-x-4 px-4 py-3">
         <Link
