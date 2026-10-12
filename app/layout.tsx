@@ -6,7 +6,7 @@ import PortfolioAnimation from "./Components/PortfolioAnimation/PortfolioAnimati
 import WhatsAppIcon from "./Components/WhatsAppIcon/WhatsAppIcon";
 import Footer from "./Components/Footer/Footer";
 import LanguageProvider from "./context/LanguageProvider";
-
+import { Analytics } from "@vercel/analytics/next"
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 
 const geistSans = Geist({
@@ -38,6 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <WhatsAppIcon />
             {children}
             <Footer />
+            <Analytics />
           </PortfolioAnimation>
         </LanguageProvider>
       </body>
